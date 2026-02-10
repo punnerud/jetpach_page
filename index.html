@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetPach - Pack smart, jet far</title>
+
+    <!-- App Installation Metadata -->
+    <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="JetPach is the smart packing list app that makes sure you never leave anything behind. Tag, filter, and get reminded on time.">
+    <meta name="keywords" content="packing list, checklist, pack, travel, organizer, reminder, bag, trip, sports, gym, football, what to bring">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JetPach - Pack smart, jet far">
+    <meta property="og:description" content="Never forget what to bring. Organize packing lists for every occasion - from gym sessions to game day.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jetpach.com">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 .underline-h {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .hero .tagline {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .hero .promo {
+            font-size: 1em;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Carousel */
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .carousel-container {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 180px;
+            gap: 15px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 10px;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            justify-content: center;
+        }
+
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-slide {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            position: relative;
+            aspect-ratio: 0.46;
+            height: auto;
+            background-color: #fff;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                grid-auto-columns: 150px;
+                justify-content: start;
+            }
+        }
+
+        /* App Store Button */
+        .app-store-button {
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .app-store-button img {
+            height: 50px;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .feature h2 {
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .feature p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Feature list */
+        .feature-list {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px 24px 24px 44px;
+            margin: 20px 0;
+        }
+
+        .feature-list h2 {
+            margin-left: -20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 4px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .feature-list li::before {
+            content: "\2713";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact */
+        .contact-info {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>JetPac<span class="underline-h">h</span></h1>
+        <p class="tagline">Pack smart, jet far</p>
+        <p class="promo">Never forget what to bring. JetPach helps you organize packing lists for every occasion &mdash; from gym sessions to game day. Tag, filter, and get reminded on time.</p>
+    </div>
+
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="IMG_8823.PNG" alt="JetPach splash screen with logo">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_8824.PNG" alt="JetPach home screen showing packing lists with tags">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_8825.PNG" alt="JetPach filtering lists by tags">
+            </div>
+            <div class="carousel-slide">
+                <img src="IMG_8826.PNG" alt="JetPach list detail with checkable items">
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="https://apps.apple.com/app/jetpach/idXXXXXXXXXX" class="app-store-button">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+        </a>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h2>Lists for Every Occasion</h2>
+            <p>Build custom packing lists for any activity. Add items quickly and check them off as you pack. Clear checkmarks when done and reuse the same list next time.</p>
+        </div>
+        <div class="feature">
+            <h2>Organize with Tags</h2>
+            <p>Assign color-coded tags like "Football", "Training", or days of the week. Filter your lists by tag to quickly find what you need.</p>
+        </div>
+        <div class="feature">
+            <h2>Inherit from Other Lists</h2>
+            <p>Going to a match? Include your training list automatically so you never miss the basics. Nest lists inside each other to avoid duplicating items.</p>
+        </div>
+        <div class="feature">
+            <h2>Smart Reminders</h2>
+            <p>Set up weekly recurring notifications or one-time reminders. Get notified before your activity so you have time to pack.</p>
+        </div>
+        <div class="feature">
+            <h2>Built for Simplicity</h2>
+            <p>Fast and straightforward. No account required. All data is stored locally on your device. Your lists are private and always available, even offline.</p>
+        </div>
+        <div class="feature">
+            <h2>Drag and Drop</h2>
+            <p>Reorder items however you like with intuitive drag and drop. Keep your most important items at the top of the list.</p>
+        </div>
+    </div>
+
+    <div class="feature-list">
+        <h2>Features</h2>
+        <ul>
+            <li>Create unlimited packing lists</li>
+            <li>Check off items as you pack</li>
+            <li>Organize lists with color-coded tags</li>
+            <li>Filter lists by tags and days of the week</li>
+            <li>Include items from one list in another</li>
+            <li>Weekly recurring and one-time notifications</li>
+            <li>Change history log for each list</li>
+            <li>Reorder items with drag and drop</li>
+            <li>English and Norwegian language support</li>
+            <li>No account or sign-up required</li>
+            <li>All data stored locally on your device</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <a href="https://apps.apple.com/app/jetpach/idXXXXXXXXXX" class="app-store-button">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+        </a>
+    </div>
+
+    <div class="contact-info">
+        <h2>Contact</h2>
+        <p><strong>Developer:</strong> Morten Punnerud Engelstad</p>
+        <p><strong>Email:</strong> <a href="mailto:morten@punnerud.net">morten@punnerud.net</a></p>
+        <p><a href="/privacy/">Privacy Policy</a></p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 JetPach. All rights reserved.</p>
+        <p><a href="/privacy/">Privacy Policy</a></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.carousel-container');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let lastX;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX;
+                lastX = startX;
+                scrollLeft = slider.scrollLeft;
+                requestAnimationFrame(drag);
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                lastX = e.pageX;
+            });
+
+            function drag() {
+                if (isDown) {
+                    const deltaX = lastX - startX;
+                    slider.scrollLeft = scrollLeft - deltaX;
+                    requestAnimationFrame(drag);
+                }
+            }
+
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX;
+                lastX = startX;
+                scrollLeft = slider.scrollLeft;
+                requestAnimationFrame(drag);
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                lastX = e.touches[0].pageX;
+            });
+        });
+    </script>
+</body>
+</html>
