@@ -1,0 +1,9 @@
+{
+    "name": "JetPach",
+    "short_name": "JetPach",
+    "description": "Pack smart, jet far. The smart packing list app.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50"
+}
